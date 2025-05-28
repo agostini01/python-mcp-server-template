@@ -17,6 +17,18 @@ platforms = ["linux-aarch64"]
 mcp_python = { path = ".", editable = true }
 
 [tool.pixi.tasks]
+fmt = "black src/ && isort src/"
+lint = "pylint src/"
+style = [{ task = "fmt" }, { task = "lint" }]
 
 [tool.pixi.dependencies]
 requests = ">=2.32.3,<3"
+black = ">=25.1.0,<26"
+isort = ">=6.0.1,<7"
+pylint = ">=3.3.7,<4"
+
+[tool.black]
+line-length = 80
+
+[tool.isort]
+profile = "black"
