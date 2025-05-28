@@ -17,3 +17,6 @@ platforms = ["linux-aarch64"]
 mcp_python = { path = ".", editable = true }
 
 [tool.pixi.tasks]
+
+[tool.pixi.dependencies]
+requests = ">=2.32.3,<3"
